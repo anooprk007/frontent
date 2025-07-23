@@ -11,7 +11,7 @@ export default function BookingPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`http://localhost:8000/api/rooms/${roomId}/`)
+    fetch(`http://${process.env.REACT_APP_API_BASE_URL}/api/rooms/${roomId}/`)
       .then((res) => res.json())
       .then((data) => setRoom(data))
       .catch((err) => console.error("Error loading room:", err));
